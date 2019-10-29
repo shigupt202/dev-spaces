@@ -231,6 +231,7 @@ app.get('/api/bikes/:bikeId', function(req, res) {
         }        
 
         var theBike = result;
+        theBike.imageUrl = "../../assets/sample-bike-01.jpg";
         theBike.id = theBike._id;
         delete theBike._id;        
         res.send(theBike);
