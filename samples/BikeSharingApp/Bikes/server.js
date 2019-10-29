@@ -232,9 +232,7 @@ app.get('/api/bikes/:bikeId', function(req, res) {
 
         var theBike = result;
         theBike.id = theBike._id;
-        delete theBike._id;
-
-        
+        delete theBike._id;        
         res.send(theBike);
     });
 });
@@ -251,7 +249,7 @@ app.delete('/api/bikes/:bikeId', function(req, res) {
         res.status(400).send(req.params.bikeId + ' is not a valid bikeId!');
         return;
     }
-    
+
     
     mongoDB.collection(mongoDBCollection).deleteOne({ _id: new ObjectId(req.params.bikeId) }, function(err, result) {
         if (err) {
