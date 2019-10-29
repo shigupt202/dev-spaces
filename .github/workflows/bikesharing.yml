@@ -14,11 +14,7 @@ jobs:
     steps:
     
     - uses: actions/checkout@master
-    - uses: azure/k8s-actions/aks-set-context@master
-      with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: ${{ secrets.CLUSTER_NAME }}
-        resource-group: ${{ secrets.RESOURCE_GROUP }}
+    
     - uses: azure/container-actions/docker-login@master
       with:
         login-server: ${{ secrets.CONTAINER_REGISTRY }}
@@ -59,11 +55,5 @@ jobs:
         helm init --client-only
         helm dependency update
         helm upgrade --install --namespace ${{ secrets.MASTER_SPACE }} bikesharing . \
-          --set bikes.image.repository=${{ secrets.CONTAINER_REGISTRY }}/bikes \
-          --set bikesharingweb.image.repository=${{ secrets.CONTAINER_REGISTRY }}/bikesharingweb\
-          --set billing.image.repository=${{ secrets.CONTAINER_REGISTRY }}/billing \
-          --set gateway.image.repository=${{ secrets.CONTAINER_REGISTRY }}/gateway \
-          --set reservation.image.repository=${{ secrets.CONTAINER_REGISTRY }}/reservation \
-          --set reservationengine.image.repository=${{ secrets.CONTAINER_REGISTRY }}/reservationengine \
-          --set users.image.repository=${{ secrets.CONTAINER_REGISTRY }}/users \
+          --set bikes.image.repository=${{ secrets.CONTAINER_REGISTRY }}/bikes \         
           --set image.tag=$GITHUB_SHA
