@@ -9,13 +9,11 @@ jobs:
     
     - uses: actions/checkout@master
       
-    - run: 'helm version --client'
-      
     - uses: shigupt202/k8s-bake@releases/v1
       with:
           renderEngine: 'helm2'
           helmChart: './samples/BikeSharingApp/charts/'
-          helm-version: 'v2.16.1'                                                   
+          helm-version: 'latest'                                                   
                 
                 
               
