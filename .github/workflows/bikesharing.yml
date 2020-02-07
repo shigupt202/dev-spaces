@@ -9,12 +9,11 @@ jobs:
     
     - uses: actions/checkout@master
       
-    - uses: shigupt202/k8s-bake@master
+    - uses: shigupt202/k8s-bake@releases/v1
       with:
           renderEngine: 'helm2'
           helmChart: './samples/BikeSharingApp/charts/'
           
          
-          
-      
+                
       id: bake
