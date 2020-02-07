@@ -13,8 +13,7 @@ jobs:
       with:
           renderEngine: 'helm2'
           helmChart: './samples/BikeSharingApp/charts/'
-          helm-version: 'v3.0.1'
-          
+          helm-version: 'v3.0.1'          
          
                 
                 
