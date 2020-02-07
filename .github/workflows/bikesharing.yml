@@ -1,12 +1,6 @@
 name: Master
 
-on:
-  push:
-    branches:
-    - master
-    paths:
-    - samples/BikeSharingApp/**
-    - "!**/*.md"
+on: [push]
     
 jobs:
   build:
