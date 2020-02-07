@@ -12,7 +12,7 @@ jobs:
     - uses: shigupt202/k8s-bake@releases/v1
       with:
           renderEngine: 'helm2'
-          helmChart: './samples/BikeSharingApp/charts/'
+          helmChart: './samples/BikeSharingApp/Bikes/charts/bikes/'
           helm-version: 'latest'                                                   
                 
                 
