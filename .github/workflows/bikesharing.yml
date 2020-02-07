@@ -16,6 +16,5 @@ jobs:
           helm-version: 'latest'                                                   
                 
                 
-              
-              
+                            
       id: bake
