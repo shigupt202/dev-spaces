@@ -8,7 +8,22 @@ jobs:
     steps:
     
     - uses: actions/checkout@master
-    
+      
+    - name: Install Helm for client
+      id: install-helm-client
+      run: |
+        set -e        
+        clientversion=$(helm version --client --short | cut -d' ' -f2 | cut -d'+' -f1 | head -c 2 | tail -c 1)
+        if [ "$clientversion" == 3]; then   
+          echo The client is already using Helm 3
+          echo ::set-output name=helm::helm
+        else
+          curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+          chmod 700 get_helm.sh
+          ./get_helm.sh --version v3.0.1
+          echo ::set-output name=helm::helm
+        fi
+        
     - uses: azure/k8s-bake@v1
       with:
           renderEngine: 'helm2'
