@@ -9,7 +9,7 @@ jobs:
     
     - uses: actions/checkout@master
       
-    - run: 'helm version'
+    - run: 'helm version --client'
       
     - uses: shigupt202/k8s-bake@releases/v1
       with:
