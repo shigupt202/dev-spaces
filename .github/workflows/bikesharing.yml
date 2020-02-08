@@ -9,9 +9,9 @@ jobs:
     
     - uses: actions/checkout@master
       
-    - run: |
-          'cd ./samples/BikeSharingApp/charts'
-          'helm dependency update'
+    - name: Dependency update
+      run: helm dependency update
+      working-directory: ./samples/BikeSharingApp/charts
           
     - uses: shigupt202/k8s-bake@releases/v1
       with:
