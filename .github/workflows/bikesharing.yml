@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@master
       
     - run: |
-          'pwd'
+          'cd ./samples/BikeSharingApp/charts'
           'helm dependency update'
           
     - uses: shigupt202/k8s-bake@releases/v1
