@@ -9,7 +9,7 @@ jobs:
     
     - uses: actions/checkout@master
 
-    - uses: Azure/k8s-bake@releases/v1
+    - uses: Azure/k8s-bake@users/shigupt/addingDependencyUpdate-release
       with:
           renderEngine: 'helm2'
           helmChart: './samples/BikeSharingApp/charts'
