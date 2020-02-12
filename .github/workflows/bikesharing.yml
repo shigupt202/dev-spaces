@@ -13,7 +13,9 @@ jobs:
       with:
           renderEngine: 'helm2'
           helmChart: './samples/BikeSharingApp/charts'
-          helm-version: 'latest'                                                   
+          helm-version: 'latest'  
+          overrides:  |
+              bikes.image.tag: cf23df2207d99a74fbe169e3eba035e633b65d94                                                 
                                                 
                             
       id: bake
