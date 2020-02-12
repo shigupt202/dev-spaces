@@ -9,7 +9,7 @@ jobs:
     
     - uses: actions/checkout@master
 
-    - uses: azure/k8s-bake@releases/v1
+    - uses: azure/k8s-bake@v1
 
       with:
 
