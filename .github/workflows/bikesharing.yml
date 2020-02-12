@@ -17,7 +17,7 @@ jobs:
 
           helmChart: './samples/BikeSharingApp/charts'             
 
-          helmVersion: 'v3.0.2'                                           
+          helmVersion: 'latest'                                           
                                                 
                             
       id: bake
