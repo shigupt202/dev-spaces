@@ -16,7 +16,12 @@ jobs:
           renderEngine: 'helm2'
 
           helmChart: './samples/BikeSharingApp/charts'             
-                                   
+          helm-version: 'latest'           
+          overrides: |
+              bikes.image.tag: 'klndkjc'
+              billing.image.tag: 'dfhsjgbhdjcb'
+              users.image.tag: 'dhsbjkd'
+              reservation.image.tag: 'dhjbd'
                                                 
                             
       id: bake
