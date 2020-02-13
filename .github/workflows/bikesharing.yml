@@ -18,10 +18,10 @@ jobs:
           helmChart: './samples/BikeSharingApp/charts'             
           helm-version: 'latest'           
           overrides: |
-              bikes.image.tag: 'klndkjc'
-              billing.image.tag: 'dfhsjgbhdjcb'
-              users.image.tag: 'dhsbjkd'
-              reservation.image.tag: 'dhjbd'
+              bikes.image.tag: ${{ github.sha }}
+              billing.image.tag: ${{ github.sha }}
+              users.image.tag: ${{ github.sha }}
+              reservation.image.tag: ${{ github.sha }}
                                                 
                             
       id: bake
