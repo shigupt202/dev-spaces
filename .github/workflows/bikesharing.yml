@@ -20,29 +20,6 @@ jobs:
           overrides: |
                 bikes.image.repository:${{ secrets.CONTAINER_REGISTRY }}/bikes
                 bikes.image.tag:${{ github.sha }}
-                bikes.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
-                bikesharingweb.image.repository:${{ secrets.CONTAINER_REGISTRY }}/bikesharingweb
-                bikesharingweb.image.tag:${{ github.sha }}
-                bikesharingweb.ingress.hosts[0]=${{ secrets.HOST }} \
-                bikesharingweb.ingress.annotations.kubernetes\\.io/ingress\\.class=traefik-azds \
-                bikesharingweb.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
-                billing.image.repository:${{ secrets.CONTAINER_REGISTRY }}/billing
-                billing.image.tag:${{ github.sha }}
-                billing.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
-                gateway.image.repository:${{ secrets.CONTAINER_REGISTRY }}/gateway
-                gateway.image.tag:${{ github.sha }}
-                gateway.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
-                gateway.ingress.hosts[0]=${{ secrets.GATEWAY_HOST }} \
-                gateway.ingress.annotations.kubernetes\\.io/ingress\\.class=traefik-azds \
-                reservation.image.repository:${{ secrets.CONTAINER_REGISTRY }}/reservation
-                reservation.image.tag:${{ github.sha }}
-                reservation.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
-                reservationengine.image.repository:${{ secrets.CONTAINER_REGISTRY }}/reservationengine
-                reservationengine.image.tag:${{ github.sha }}
-                reservationengine.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
-                users.image.repository:${{ secrets.CONTAINER_REGISTRY }}/users
-                users.image.tag:${{ github.sha }}
-                users.imagePullSecrets[0].name:${{ secrets.IMAGE_PULL_SECRET }}
                                                 
                             
       id: bake
