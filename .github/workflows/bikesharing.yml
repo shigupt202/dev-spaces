@@ -9,7 +9,7 @@ jobs:
     
     - uses: actions/checkout@master
 
-    - uses: azure/k8s-bake@v1
+    - uses: azure/k8s-bake@users/shigupt/addingSilentInput
 
       with:
 
@@ -20,6 +20,7 @@ jobs:
           overrides: |
                 bikes.image.repository:${{ secrets.CONTAINER_REGISTRY }}/bikes
                 bikes.image.tag:${{ github.sha }}
+          silent: 'false'
                                                 
                             
       id: bake
