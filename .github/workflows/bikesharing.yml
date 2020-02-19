@@ -9,7 +9,7 @@ jobs:
     
     - uses: actions/checkout@master
 
-    - uses: azure/k8s-bake@v1
+    - uses: azure/k8s-bake@users/shigupt/addingSilentInput
 
       with:
 
@@ -17,7 +17,7 @@ jobs:
 
           helmChart: './samples/BikeSharingApp/charts'             
           helm-version: 'latest'           
-          
+          silent: 'false'
                                                                                                 
                
                
