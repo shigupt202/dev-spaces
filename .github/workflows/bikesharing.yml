@@ -8,7 +8,7 @@ jobs:
     steps:
     
     - uses: actions/checkout@master
-    - run: 'helm init'
+     
     - uses: azure/k8s-bake@users/shigupt/addingSilentInput
 
       with:
