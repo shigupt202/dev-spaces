@@ -16,7 +16,7 @@ jobs:
           renderEngine: 'helm2'
 
           helmChart: './samples/BikeSharingApp/charts'             
-          helm-version: '3.1.0'           
+          helm-version: 'latest'           
           silent: 'false'
                                                                                                 
                
